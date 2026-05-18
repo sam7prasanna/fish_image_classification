@@ -4,6 +4,8 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 from PIL import Image
 import os
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # Page title
 st.title("🐟 Fish Species Classification")
@@ -35,7 +37,7 @@ uploaded_file = st.file_uploader("Upload a fish image", type=["jpg", "png", "jpe
 if uploaded_file is not None:
 
     image = Image.open(uploaded_file)
-    st.image(image, caption="Uploaded Image", use_column_width=True)
+    st.image(image, caption="Uploaded Image", use_container_width=True)
 
     # Preprocess image
     img = image.resize((224,224))
