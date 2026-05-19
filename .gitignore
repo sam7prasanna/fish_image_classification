@@ -1,5 +1,4 @@
-*.h5
-*.keras
+.keras
 *.pkl
 dataset/
 __pycache__/
